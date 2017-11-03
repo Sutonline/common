@@ -1,0 +1,45 @@
+## Local/Production Properties
+dev-local.properties
+important.properties
+common.properties
+
+## IDEA
+*~
+*.iml
+*.ipr
+*.iws
+*.ids
+.idea/
+
+## ECLIPSE
+.project
+
+## JAVA
+target/
+.classpath
+.project
+.settings/
+lib/
+target/
+bin/
+build/
+
+## Maven
+pom.xml.releaseBackup
+release.properties
+
+## Log
+logs/
+*.log
+*.log.*
+
+## Other
+.vagrant/
+.#*
+.svn
+rebel.xml
+.DS_Store
+.metadata
+
+## gradle
+.gradle/
