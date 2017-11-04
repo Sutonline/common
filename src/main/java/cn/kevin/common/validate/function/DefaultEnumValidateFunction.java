@@ -1,5 +1,6 @@
 package cn.kevin.common.validate.function;
 
+import cn.kevin.common.exception.NotSupportException;
 import cn.kevin.common.validate.KeyInterface;
 
 /**
@@ -15,6 +16,6 @@ public class DefaultEnumValidateFunction implements EnumValidateFunction {
             return ((KeyInterface) value).getKey();
         }
 
-        return null;
+        throw new NotSupportException("using DefaultEnumValidateFunction requires enum implements KeyInterface.");
     }
 }

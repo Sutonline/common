@@ -21,14 +21,22 @@ public class EnumValidator implements ConstraintValidator<EnumValidate, Object> 
 
     private Class<? extends Enum> clazz;
 
+    private boolean containsNull;
+
     @Override
     public void initialize(EnumValidate constraintAnnotation) {
         this.function = constraintAnnotation.function();
         this.clazz = constraintAnnotation.enumClazz();
+        this.containsNull = constraintAnnotation.containsNull();
     }
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
+        // 是否包含空值的枚举
+        if (! containsNull && value == null) {
+            return true;
+        }
+
         final EnumValidateFunction curFunc;
         try {
             curFunc = function.newInstance();

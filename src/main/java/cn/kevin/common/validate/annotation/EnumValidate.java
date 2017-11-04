@@ -22,6 +22,11 @@ public @interface EnumValidate {
     String message() default "enum corresponding to key is not found";
 
     /**
+     * 是否对null值进行校验
+     */
+    boolean containsNull() default false;
+
+    /**
      * an attribute payload that can be used by clients of the Bean Validation API to assign custom payload objects to a
      * constraint. This attribute is not used by the API itself.
      * 自定义payload，官方说明是可以根据payload的错误不一样实现对应的处理
